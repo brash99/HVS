@@ -59,3 +59,55 @@
 09:09:42 PM Nov 17, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
 09:09:42 PM Nov 17, 2016 > INIT TIME:76 (sec)
 09:09:42 PM Nov 17, 2016 > Start HV server -> port: 5555
+01:51:27 PM Nov 30, 2016 > Begin initialization...
+
+01:51:27 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:51:27 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:51:27 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:51:27 PM Nov 30, 2016 > ERROR : Host:sbscdet:2012 not initialized
+01:51:27 PM Nov 30, 2016 > End initialization
+01:51:28 PM Nov 30, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+01:51:28 PM Nov 30, 2016 > INIT TIME:1 (sec)
+01:51:28 PM Nov 30, 2016 > Start HV server -> port: 5555
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > ERROR : in load from file; hostname out of range
+01:52:36 PM Nov 30, 2016 > Settings updated from file: /Users/brash/slowc/TEST/hv_set/caen_12_V3.set.
+01:53:38 PM Nov 30, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+01:58:44 PM Nov 30, 2016 > Begin initialization...
+
+01:58:44 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:58:44 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:58:44 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:58:44 PM Nov 30, 2016 > ERROR : Host:sbscdet:2012 not initialized
+01:58:44 PM Nov 30, 2016 > End initialization
+01:58:44 PM Nov 30, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+01:58:44 PM Nov 30, 2016 > INIT TIME:1 (sec)
+01:58:44 PM Nov 30, 2016 > Start HV server -> port: 5555
+01:59:56 PM Nov 30, 2016 > Begin initialization...
+
+01:59:56 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:59:56 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:59:56 PM Nov 30, 2016 > Don't know about host: sbscdet:2012
+01:59:56 PM Nov 30, 2016 > ERROR : Host:sbscdet:2012 not initialized
+01:59:56 PM Nov 30, 2016 > End initialization
+01:59:56 PM Nov 30, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+01:59:56 PM Nov 30, 2016 > INIT TIME:1 (sec)
+01:59:56 PM Nov 30, 2016 > Start HV server -> port: 5555
