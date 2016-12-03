@@ -41,7 +41,7 @@ public class HVMapMonitor extends Thread {
     public void updateMapChannels(String addr) {
         for (Enumeration e = hvmt.elements() ; e.hasMoreElements() ;) {
             map =(HVMapTable)e.nextElement() ;
-	    // System.out.println(map.getMapName()+":HVmapMonitor:update:"+addr);
+	    System.out.println(map.getMapName()+":HVmapMonitor:update:"+addr);
 	    map.updateChannel(addr);
 
 	}
@@ -124,7 +124,7 @@ public class HVMapMonitor extends Thread {
 //****
 	    for (int i=0 ; i<nc;i++) {
 		String addr = f.host +pdelimiter +sl +pdelimiter +i;
-		//System.out.println("HVmapMonitor:updatechannels:"+addr);
+		System.out.println("HVmapMonitor:updateHVstatus:updatechannels:"+addr);
 		
 //		map.updateChannel(addr);
 		updateMapChannels(addr);
@@ -156,6 +156,7 @@ public class HVMapMonitor extends Thread {
 		for (int i=0 ; i<nc;i++) {
 		    String addr = f.host +pdelimiter +sl +pdelimiter +i;
 //		    map.updateChannel(addr);
+		System.out.println("HVmapMonitor:update:updatechannels:"+addr);
 		updateMapChannels(addr);
 		    //	f.hvm[id].table.myModel.updateColumn(iprop+1);
 		}		

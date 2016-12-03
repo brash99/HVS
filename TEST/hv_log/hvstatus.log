@@ -111,3 +111,13 @@
 01:59:56 PM Nov 30, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
 01:59:56 PM Nov 30, 2016 > INIT TIME:1 (sec)
 01:59:56 PM Nov 30, 2016 > Start HV server -> port: 5555
+12:12:07 PM Dec 01, 2016 > Begin initialization...
+
+12:12:07 PM Dec 01, 2016 > Don't know about host: sbscdet:2012
+12:12:07 PM Dec 01, 2016 > Don't know about host: sbscdet:2012
+12:12:07 PM Dec 01, 2016 > Don't know about host: sbscdet:2012
+12:12:07 PM Dec 01, 2016 > ERROR : Host:sbscdet:2012 not initialized
+12:12:07 PM Dec 01, 2016 > End initialization
+12:12:07 PM Dec 01, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+12:12:07 PM Dec 01, 2016 > INIT TIME:1 (sec)
+12:12:07 PM Dec 01, 2016 > Start HV server -> port: 5555

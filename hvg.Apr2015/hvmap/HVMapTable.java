@@ -34,7 +34,7 @@ import hvframe.*;
  */
 public class HVMapTable extends JFrame implements Printable {
 
-    protected boolean DEBUG = false;
+    protected boolean DEBUG = true;
     protected JMenuBar menuBar;
     protected JMenu menu, submenu;   
     JMenuItem menuItem;
@@ -984,11 +984,11 @@ public class HVMapTable extends JFrame implements Printable {
 	if(index>=0) {
 	    i = index/XMAX;
 	    k = index-(i)*XMAX +1;
-	    //System.out.println(mapName+":index:"+index+ " x:"+i+" y:"+k);
+	    System.out.println(mapName+":index:"+index+ " x:"+i+" y:"+k);
 	    
 	    String chnstat =(String)  getChannelStatus(chnaddr,prop[propertyKey]);
 	    ImageIcon icon = ichnc;
-	    //System.out.println("PropKey:"+propertyKey +" Status:"+chnstat+" chaddr:"+chnaddr);
+	    System.out.println("PropKey:"+propertyKey +" Status:"+chnstat+" chaddr:"+chnaddr);
 	    if(propertyKey==0) {
 		if(chnstat.equalsIgnoreCase("1")) icon = ichen; 
 		if(chnstat.equalsIgnoreCase("0")) icon = ichdis; 
@@ -1018,7 +1018,7 @@ public class HVMapTable extends JFrame implements Printable {
         public  MyTableModel(String propertyname) {
 	    //	    super();
 	    propview = propertyname;
-	    // System.out.println("propview:"+propview+"  name:"+propertyname);
+	    System.out.println("propview:"+propview+"  name:"+propertyname);
 	    for(int i=0; i<4; i++) {
 		if(propertyname.equalsIgnoreCase(prop[i])) {
 		    propkey = i;
@@ -1033,7 +1033,7 @@ public class HVMapTable extends JFrame implements Printable {
 	    int np = XMAX+1;	    
 	    String[] s = new String[np];
 	    int lab=0;
-	    //System.out.println("NUMPARAM:"+np);
+	    System.out.println("NUMPARAM:"+np);
 
 	    s[0] = XYHeader;		
 
@@ -1043,13 +1043,13 @@ public class HVMapTable extends JFrame implements Printable {
 		    lab=i+startX-1;
 		    if((i+startX)>9) s[i] = XcolumnHeader+(lab);
 		    if((i+startX)<10)  s[i] = XcolumnHeader+"0"+(lab);
-		    // 	System.out.println("Label:"+i+":"+s[i]);
+		    System.out.println("Label:"+i+":"+s[i]);
 		}
 	    else 
 		for(int i=1;i<np;i++) {
 		    if((np-i+startX)>9) s[i] = XcolumnHeader+(np-i+startX-1);
 		    if((np-i+startX)<10)  s[i] = XcolumnHeader+"0"+(np-i+startX-1);
-		    // 	System.out.println("Label:"+i+":"+s[i]);
+		    System.out.println("Label:"+i+":"+s[i]);
 		}
 	    
 	    return s;
@@ -1088,7 +1088,7 @@ public class HVMapTable extends JFrame implements Printable {
 		    ob[i][k] = new Object();
 		    int m = k-1 + (nx-1)*i;
 		    String chnaddr =(String) hvmap.elementAt(m);
-		    //System.out.println(mapName+" : " +chnaddr);
+		    System.out.println(mapName+" : " +chnaddr);
 
 		    //ob[i][k] =(ImageIcon) getChannelStatus(chnaddr,propview);
 
