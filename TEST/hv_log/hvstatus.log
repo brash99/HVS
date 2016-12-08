@@ -125,3 +125,24 @@
 
 10:56:17 AM Dec 04, 2016 > Begin initialization...
 
+10:57:16 AM Dec 04, 2016 > Begin initialization...
+
+10:58:32 AM Dec 04, 2016 > Couldn't get I/O for the connection to:sbscdet:2012
+10:58:32 AM Dec 04, 2016 > Couldn't get I/O for the connection to:sbscdet:2012
+10:58:32 AM Dec 04, 2016 > Couldn't get I/O for the connection to:sbscdet:2012
+10:58:32 AM Dec 04, 2016 > ERROR : Host:sbscdet:2012 not initialized
+10:58:32 AM Dec 04, 2016 > End initialization
+10:58:32 AM Dec 04, 2016 > Map 'TEST' loaded from file: /Users/brash/slowc/TEST/hv_maps/test.map.
+10:58:32 AM Dec 04, 2016 > INIT TIME:76 (sec)
+10:58:32 AM Dec 04, 2016 > Start HV server -> port: 5555
+02:07:48 PM Dec 05, 2016 > Begin initialization...
+
+02:07:48 PM Dec 05, 2016 > Don't know about host: sbscdet:2012
+02:07:48 PM Dec 05, 2016 > Don't know about host: sbscdet:2012
+02:07:48 PM Dec 05, 2016 > Don't know about host: sbscdet:2012
+02:07:48 PM Dec 05, 2016 > ERROR : Host:sbscdet:2012 not initialized
+02:07:48 PM Dec 05, 2016 > End initialization
+02:07:48 PM Dec 05, 2016 > Map 'Module1_Left' loaded from file: /Users/brash/slowc/TEST/hv_maps/Module1_Left.map.
+02:07:48 PM Dec 05, 2016 > Map 'Module1_Right' loaded from file: /Users/brash/slowc/TEST/hv_maps/Module1_Right.map.
+02:07:48 PM Dec 05, 2016 > INIT TIME:1 (sec)
+02:07:48 PM Dec 05, 2016 > Start HV server -> port: 5555

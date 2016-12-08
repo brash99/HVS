@@ -60,10 +60,16 @@ public class HVMapTable extends JFrame implements Printable {
     ImageIcon ichdis = new ImageIcon("./images/chndis.gif");
     ImageIcon icherr = new ImageIcon("./images/chnerr.gif");
     ImageIcon ichnc = new ImageIcon("./images/chnnc.gif");
+    ImageIcon ichcdetleft = new ImageIcon("./images/cdet_left.gif");
+    ImageIcon ichcdetcenter = new ImageIcon("./images/cdet_center.gif");
+    ImageIcon ichcdetright = new ImageIcon("./images/cdet_right.gif");
     final String frameTitle = new String("HV MAP: "); 
-    final String XcolumnHeader = new String(" ");
+    //final String XcolumnHeader = new String(" ");
+    final String XcolumnHeaderL = new String("Left");
+    final String XcolumnHeaderR = new String("Right");
     final String YrowHeader = new String(" ");
-    final String XYHeader = new String("Y \\ X");
+    //final String XYHeader = new String("Y \\ X");
+    final String XYHeader = new String(" ");
     String[] prop = {new String("CE"), new String("MV"), new String("DV"), new String("MC") };
     String[] proptitle = {new String("Channel Status"), new String("Measured Voltage"), 
 			  new String("Demand Voltage"), new String("Measured Current") };
@@ -232,7 +238,7 @@ public class HVMapTable extends JFrame implements Printable {
 
 	System.out.println("TabelWidth:"+tableWidth+"  TableHeight:"+tableHeight);
 	System.out.println("Init_Width:"+INIT_WIDTH+"  Init_Height:"+INIT_HEIGHT);
-	
+        	
 	//setUndecorated(true);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -348,7 +354,7 @@ public class HVMapTable extends JFrame implements Printable {
             table.getTableHeader().getDefaultRenderer();
 
 
-        for (int i = 0; i < XMAX+1; i++) {
+        for (int i = 0; i < XMAX+2; i++) {
             column = table.getColumnModel().getColumn(i);
 
 	    //Set up tool tips for the cells.
@@ -393,7 +399,7 @@ public class HVMapTable extends JFrame implements Printable {
 
 
 	}
-	//	maptable.setRowHeight(ichen.getIconHeight()+ichen.getIconHeight()/2);
+		//maptable.setRowHeight(ichcdetleft.getIconHeight());
     } 
 
 
@@ -450,7 +456,7 @@ public class HVMapTable extends JFrame implements Printable {
 	String hvstat = new String("HVOFF");
 	int row = maptable.getSelectedRow();
 	int column = maptable.getSelectedColumn();
-	int index = column+row*XMAX -1;
+	int index = column/2+1+row*XMAX -1;
 	int x = 0;
 	int y = 0;
 	// check axis directioin
@@ -466,7 +472,7 @@ public class HVMapTable extends JFrame implements Printable {
 	    y = row+1; // decremental
 	}
 
-	//	System.out.println("col:"+column+" :row:"+row+" :ind:"+index);
+	System.out.println("col:"+column+" :row:"+row+" :ind:"+index);
 	String chnaddr =(String) hvmap.elementAt(index);
 
 
@@ -616,7 +622,7 @@ public class HVMapTable extends JFrame implements Printable {
       	double tableHeight = (double) maptable.getRowCount()*(maptable.getRowHeight() +
 			     maptable.getRowMargin()) + maptable.getTableHeader().getHeight();
         double paneWidth = (double) this.getWidth();
-        double scale = 1;
+        double scale = 1.2;
 	double wscale =1;
 	double hscale =1;
 
@@ -1030,27 +1036,30 @@ public class HVMapTable extends JFrame implements Printable {
 	
 
 	public String[] setcolumnNames() {
-	    int np = XMAX+1;	    
+	    int np = XMAX+2;	    
 	    String[] s = new String[np];
 	    int lab=0;
 	    System.out.println("NUMPARAM:"+np);
 
-	    s[0] = XYHeader;		
+	    s[0] = XYHeader;
+            s[1] = XcolumnHeaderL;
+	    s[2] = "                                                                                                       ";		
+            s[3] = XcolumnHeaderR;		
 
-	    // 23-Aug-2005 add start index shifting for axis labels
-	    if(incrX)
-		for(int i=1;i<np;i++) {
-		    lab=i+startX-1;
-		    if((i+startX)>9) s[i] = XcolumnHeader+(lab);
-		    if((i+startX)<10)  s[i] = XcolumnHeader+"0"+(lab);
-		    System.out.println("Label:"+i+":"+s[i]);
-		}
-	    else 
-		for(int i=1;i<np;i++) {
-		    if((np-i+startX)>9) s[i] = XcolumnHeader+(np-i+startX-1);
-		    if((np-i+startX)<10)  s[i] = XcolumnHeader+"0"+(np-i+startX-1);
-		    System.out.println("Label:"+i+":"+s[i]);
-		}
+	    //// 23-Aug-2005 add start index shifting for axis labels
+	    //if(incrX)
+	    //	for(int i=1;i<np;i++) {
+	    //	    lab=i+startX-1;
+	    //	    if((i+startX)>9) s[i] = XcolumnHeader+(lab);
+	    //	    if((i+startX)<10)  s[i] = XcolumnHeader+"0"+(lab);
+	    //	    System.out.println("Label:"+i+":"+s[i]);
+	    //	}
+	    //else 
+	    //	for(int i=1;i<np;i++) {
+	    //	    if((np-i+startX)>9) s[i] = XcolumnHeader+(np-i+startX-1);
+	    //	    if((np-i+startX)<10)  s[i] = XcolumnHeader+"0"+(np-i+startX-1);
+	    //	    System.out.println("Label:"+i+":"+s[i]);
+	    //	}
 	    
 	    return s;
 	}
@@ -1058,8 +1067,8 @@ public class HVMapTable extends JFrame implements Printable {
 	Object[][] data = setdata(prop[0]);
 
 	public Object[][] setdata(String propertyname) {
-	    int ny = YMAX ;
-	    int nx = XMAX+1;	    
+	    int ny = YMAX;
+	    int nx = XMAX+2;	    
 	    Object[][] ob = new Object[ny][nx];	    
 
 	    propview = propertyname;
@@ -1074,19 +1083,39 @@ public class HVMapTable extends JFrame implements Printable {
 
 	    for(int i=0; i<ny; i++) {
 		ob[i][0] = new Object();
+		ob[i][2] = new Object();
 		//ob[i][0] = YrowHeader + (ny-i);
 
 	    // 24-Aug-2005 add start index shifting for axis labels
-		if(incrY) labelY = ny-i+startY-1;
-		else  labelY = i+startY;
+		//if(incrY) labelY = ny-i+startY-1;
+		//else  labelY = i+startY;
+		if(incrY) labelY = (ny-i+startY-1)%14;
+		else labelY = i%14+startY;
 
 		if((labelY)>9) ob[i][0] = YrowHeader+(labelY);		
 		if((labelY)<10)  ob[i][0] = YrowHeader+"0"+(labelY);
+ 		
+		ImageIcon icon2 = ichcdetleft;
+		if (i < 7 || i > 34 ) {
+			ob[i][2] = (ImageIcon) icon2;
+		} else {
+			if (i > 13 && i < 28 ) {
+				icon2 = ichcdetright;
+				ob[i][2] = (ImageIcon) icon2;
+			} else {
+				icon2 = ichcdetcenter;
+				ob[i][2] = (ImageIcon) icon2;
+			}
+		}	
+ 
+		//if((labelY)>9) ob[i][2] = YrowHeader+(labelY);		
+		//if((labelY)<10)  ob[i][2] = YrowHeader+"0"+(labelY);
 
 		
-		for(int k=1; k<nx; k++) {
+		for(int k=1; k<nx; k=k+2) {
 		    ob[i][k] = new Object();
-		    int m = k-1 + (nx-1)*i;
+		    //int m = k-1 + (nx-1)*i;
+		    int m = k/2 + (nx-2)*i;
 		    String chnaddr =(String) hvmap.elementAt(m);
 		    System.out.println(mapName+" : " +chnaddr);
 
@@ -1129,7 +1158,7 @@ public class HVMapTable extends JFrame implements Printable {
 		
 	public  Object[] longValues = setlongValue();
 	public Object[] setlongValue() {
-	    int nx = XMAX+1;	    
+	    int nx = XMAX+2;	    
 	    Object[] ob = new Object[nx];
 	    ob[0] = new String("Y:37");
 	    for(int i=1; i<nx; i++) {
