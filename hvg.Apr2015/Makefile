@@ -5,17 +5,14 @@
 # it.
 #
 
-#JAVA_PATH = /apps/java/PRO/bin
-#JAVA_PATH = /usr/bin
-JAVA_PATH = /apps/java/jdk1.6.0_03/bin
 #OPT	= -Xlint:unchecked
 OPT	= 
 DEBUG	= -deprecation
-JAVA	= $(JAVA_PATH)/java
-JAVAC	= $(JAVA_PATH)/javac
-JAR     = $(JAVA_PATH)/jar
-JAVADOC = $(JAVA_PATH)/javadoc
-APPV	= $(JAVA_PATH)/appletviewer
+JAVA	= $(shell which java)
+JAVAC	= $(shell which javac)
+JAR     = $(shell which jar)
+JAVADOC = $(shell which javadoc)
+APPV	= $(shell which appletviewer)
 
 .SUFFIXES: .java .class .html .jar
 
