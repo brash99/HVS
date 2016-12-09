@@ -63,6 +63,7 @@ public class HVMapTable extends JFrame implements Printable {
     ImageIcon ichcdetleft = new ImageIcon("./images/cdet_left.gif");
     ImageIcon ichcdetcenter = new ImageIcon("./images/cdet_center.gif");
     ImageIcon ichcdetright = new ImageIcon("./images/cdet_right.gif");
+    ImageIcon ichscintillator = new ImageIcon("./images/scintillator.gif");
     final String frameTitle = new String("HV MAP: "); 
     //final String XcolumnHeader = new String(" ");
     final String XcolumnHeaderL = new String("Left");
@@ -1042,10 +1043,18 @@ public class HVMapTable extends JFrame implements Printable {
 	    int lab=0;
 	    System.out.println("NUMPARAM:"+np);
 
-	    s[0] = XYHeader;
-            s[1] = XcolumnHeaderL;
-	    s[2] = "                                                                                                       ";		
-            s[3] = XcolumnHeaderR;		
+	    if (np == 4) {
+		s[0] = XYHeader;
+            	s[1] = XcolumnHeaderL;
+	    	s[2] = "                                                                                                       ";		
+            	s[3] = XcolumnHeaderR;
+	    }else{
+		if (np == 3) {
+			s[0] = XYHeader;
+            		s[1] = XcolumnHeaderL;
+	    		s[2] = "                                                                                                       ";		
+		}
+	    }	
 
 	    //// 23-Aug-2005 add start index shifting for axis labels
 	    //if(incrX)
@@ -1096,18 +1105,25 @@ public class HVMapTable extends JFrame implements Printable {
 		if((labelY)>9) ob[i][0] = YrowHeader+(labelY);		
 		if((labelY)<10)  ob[i][0] = YrowHeader+"0"+(labelY);
  		
-		ImageIcon icon2 = ichcdetleft;
-		if (i < 7 || i > 34 ) {
-			ob[i][2] = (ImageIcon) icon2;
-		} else {
-			if (i > 13 && i < 28 ) {
-				icon2 = ichcdetright;
+		if (nx == 4) {
+			ImageIcon icon2 = ichcdetleft;
+			if (i < 7 || i > 34 ) {
 				ob[i][2] = (ImageIcon) icon2;
 			} else {
-				icon2 = ichcdetcenter;
+				if (i > 13 && i < 28 ) {
+					icon2 = ichcdetright;
+					ob[i][2] = (ImageIcon) icon2;
+				} else {
+					icon2 = ichcdetcenter;
+					ob[i][2] = (ImageIcon) icon2;
+				}
+			}
+		}else{
+			if (nx == 3) {
+				ImageIcon icon2 = ichscintillator;
 				ob[i][2] = (ImageIcon) icon2;
 			}
-		}	
+		}		
  
 		//if((labelY)>9) ob[i][2] = YrowHeader+(labelY);		
 		//if((labelY)<10)  ob[i][2] = YrowHeader+"0"+(labelY);
