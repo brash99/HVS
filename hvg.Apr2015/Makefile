@@ -6,8 +6,9 @@
 #
 
 #JAVA_PATH = /apps/java/PRO/bin
-#JAVA_PATH = /apps/java/jdk1.6.0_03/bin
-JAVA_PATH = /usr/bin
+#JAVA_PATH = /usr/bin
+JAVA_PATH = /apps/java/jdk1.6.0_03/bin
+#OPT	= -Xlint:unchecked
 OPT	= 
 DEBUG	= -deprecation
 JAVA	= $(JAVA_PATH)/java
@@ -40,6 +41,7 @@ HELP:
 	@echo 'make doc          - create documentation'
 	@echo 'make clean        - delete backup files'
 	@echo 'make realclean    - make clean and delete .class files'
+	@echo 'make remake    - make realclean and make all'
 
 all: HVS.class HVmainMenu.class DBAdapter.class \
      hvtools hvframe hvmap hvserver socket
@@ -74,6 +76,8 @@ clean:
 
 realclean:	clean
 	rm -f *.class */*.class
+
+remake:		realclean all
 
 # dependencies
 
