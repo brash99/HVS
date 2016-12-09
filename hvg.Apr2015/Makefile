@@ -6,7 +6,8 @@
 #
 
 #JAVA_PATH = /apps/java/PRO/bin
-JAVA_PATH = /usr/bin
+#JAVA_PATH = /usr/bin
+JAVA_PATH = /apps/java/jdk1.6.0_03/bin
 #OPT	= -Xlint:unchecked
 OPT	= 
 DEBUG	= -deprecation

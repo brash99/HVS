@@ -990,6 +990,7 @@ public class HVMapTable extends JFrame implements Printable {
 	if(index>=0) {
 	    i = index/XMAX;
 	    k = index-(i)*XMAX +1;
+	    if (k==2) k++; // Add 1 to column number for RIGHT PMTs
 	    System.out.println(mapName+":index:"+index+ " x:"+i+" y:"+k);
 	    
 	    String chnstat =(String)  getChannelStatus(chnaddr,prop[propertyKey]);
