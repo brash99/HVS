@@ -1106,8 +1106,23 @@ public class HVMapTable extends JFrame implements Printable {
 		if((labelY)<10)  ob[i][0] = YrowHeader+"0"+(labelY);
  		
 		if (nx == 4) {
+			if (ny == 14) {
 				ImageIcon icon2 = ichcdetcenter;
 				ob[i][2] = (ImageIcon) icon2;
+			}else{
+				ImageIcon icon2 = ichcdetleft;
+		                if (i < 7 || i > 34 ) {
+                		        ob[i][2] = (ImageIcon) icon2;
+                		} else {
+                        		if (i > 13 && i < 28 ) {
+                                		icon2 = ichcdetright;
+                                		ob[i][2] = (ImageIcon) icon2;
+                        		} else {
+                                		icon2 = ichcdetcenter;
+                                		ob[i][2] = (ImageIcon) icon2;
+                        		}
+                		}
+			}
 		}else{
 			if (nx == 3) {
 				ImageIcon icon2 = ichscintillator;
